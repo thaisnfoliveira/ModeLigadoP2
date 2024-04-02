@@ -1,0 +1,51 @@
+Main
+association Diario
+---
+---
+---
+
+Diario
+composes Anotação, Tema
+---
+- autor: str
+- anotações: Anotação[]
+- temas: Tema[]
+- ano: int
+---
++ Diario()
++ adicionaAnotação(data: str, texto: str): void
++ listarAnotaçõesOrdem(): str
++ listarAnotações(): str
++ listarAnotaçõesDesempenho(menorNota: double, maiorNota: double): str
++ mediaDesempenho(): double
++ atribuirNota(indiceAnotação: int): void
++ criarTema(nome: str, complexidade: int): void
++ adicionarTemaAnotação(indiceAnotação: int, indiceTema: int): void
++ contarAnotações(indiceTema: int): void
+---
+
+Anotação
+association Tema
+---
+- data: str
+- texto: str
+- nota: double
+- tema: Tema
+---
++ Anotação(data: str, texto: str)
++ toString(): str
++ setNota(novaNota: double): void
++ getNota(): double
++ getData(): str
++ getTema(): str
++ setTema(tema: Tema): void
+---
+
+Tema
+---
+- nome: str
+- complexidade: int
+---
++ Tema(nome:str, complexidade: int)
++ toString(): str
+---
