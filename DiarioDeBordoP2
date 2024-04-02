@@ -34,10 +34,12 @@ association Tema
 - tema: Tema
 ---
 + Anotação(data: str, texto: str)
++ Anotação(data: str, texto: str, nota: double)
 + setNota(novaNota: double): void
 + getNota(): double
 + getData(): str
 + getTema(): str
++ getTexto(): str
 + setTema(tema: Tema): void
 + toString(): str
 ---
