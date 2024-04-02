@@ -12,7 +12,7 @@ composes Anotação, Tema
 - temas: Tema[]
 - ano: int
 ---
-+ Diario()
++ Diario(autor: str, ano: int)
 + adicionaAnotação(data: str, texto: str): void
 + listarAnotaçõesOrdem(): str
 + listarAnotações(): str
@@ -22,9 +22,10 @@ composes Anotação, Tema
 + criarTema(nome: str, complexidade: int): void
 + adicionarTemaAnotação(indiceAnotação: int, indiceTema: int): void
 + contarAnotações(indiceTema: int): void
++ toString(): str
 ---
 
-Anotação
+Anotação //Encapsulamento das informações que caracterizam uma anotação
 association Tema
 ---
 - data: str
@@ -33,12 +34,12 @@ association Tema
 - tema: Tema
 ---
 + Anotação(data: str, texto: str)
-+ toString(): str
 + setNota(novaNota: double): void
 + getNota(): double
 + getData(): str
 + getTema(): str
 + setTema(tema: Tema): void
++ toString(): str
 ---
 
 Tema
